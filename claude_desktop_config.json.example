@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "github-pr-reviewer": {
+      "command": "python",
+      "args": ["/absolute/path/to/github-pr-reviewer-mcp/github_pr_mcp.py"],
+      "env": {
+        "GITHUB_TOKEN": "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"
+      }
+    }
+  }
+}

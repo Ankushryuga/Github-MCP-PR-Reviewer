@@ -1,0 +1,61 @@
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  
+  govet:
+    enable-all: true
+    disable:
+      - shadow
+  
+  gofmt:
+    simplify: true
+  
+  goimports:
+    local-prefixes: github.com/example
+
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+
+  revive:
+    rules:
+      - name: exported
+        severity: warning
+        disabled: false
+
+linters:
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+    - gofmt
+    - goimports
+    - gocritic
+    - revive
+    - misspell
+    - gosec
+    - unconvert
+    - unparam
+
+  disable:
+    - exhaustive
+    - gochecknoglobals
+    - gochecknoinits
+
+run:
+  timeout: 5m
+  tests: true
+
+issues:
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
