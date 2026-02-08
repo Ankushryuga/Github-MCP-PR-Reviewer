@@ -24,13 +24,28 @@ func HandleHealthCheck(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	user := User{
-		ID:    1,
-		Name:  "John Doe",
-		Email: "john@example.com",
+	// user := User{
+	// 	ID:    1,
+	// 	Name:  "John Doe",
+	// 	Email: "john@example.com",
+	// }
+	// User slice (array of objects)
+	users := []User{
+		{
+			ID:    1,
+			Name:  "John Doe",
+			Email: "john@example.com",
+		},
+		{
+			ID:    2,
+			Name:  "Jane Smith",
+			Email: "jane@example.com",
+		},
 	}
-
-	fmt.Println(GreetUser(user))
+	// Greet all users
+	for _, user := range users {
+		fmt.Println(GreetUser(user))
+	}
 
 	http.HandleFunc("/health", HandleHealthCheck)
 	fmt.Println("Server starting on :8080")
